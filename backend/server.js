@@ -19,6 +19,8 @@ app.use(
   })
 );
 
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+connectDB();
 app.use(express.json());
 app.use(cookieParser());
 
@@ -29,8 +31,3 @@ app.get('/', (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  connectDB();
-});
