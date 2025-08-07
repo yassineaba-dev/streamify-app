@@ -22,7 +22,7 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send("Welcome to the Stream App API");
 });
 
